@@ -1,7 +1,14 @@
+*{
+    font-family: 'Script';
+}
 h2{
     text-align: center;
     margin: 5px;
     padding: 5px;
+    font-weight: bold;
+}
+h1{
+    font-weight: bold;
 }
 .formulario {
     max-width: 400px;
@@ -53,4 +60,21 @@ input[type="text"]:focus,input[type="file"]:focus {
 }
 .texta{
     float: right;
+}
+
+/*Estilos para el total*/
+.input-group.mb-3.a {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0;
+}
+
+.input-group.mb-3.a .input-group-text.a {
+    width: auto; 
+    padding: 0; 
+}
+
+.input-group-text.a input.form-control.a {
+    width: 100px;
 }

@@ -1,29 +1,31 @@
 document.getElementById("ingresos").addEventListener("submit", function(event) {
     event.preventDefault(); // Detener la recarga automática de la página
+
     var proveedor = document.getElementById("proveedor");
     var producto = document.getElementById("producto");
-    var mensajes = []; // Usamos un array para almacenar los mensajes
+    var mensajes = [];
     var resultado = true;
 
-    if(proveedor.value.length>0){
-        mensajes.push('Proveedor seleccionado ✔️');
-    }else{
+    if (proveedor.value === "") {
         mensajes.push('Seleccione un proveedor ❌');
         resultado = false;
+    } else {
+        mensajes.push('Proveedor seleccionado ✔️');
     }
-    if(producto.value.length>0){
-        mensajes.push('Producto seleccionado ✔️');
-    }else{
+
+    if (producto.value === "") {
         mensajes.push('Seleccione un producto ❌');
         resultado = false;
+    } else {
+        mensajes.push('Producto seleccionado ✔️');
     }
-    // Crear una lista de mensajes
-    var listaMensajes = '<ul style="text-align: left;">'; 
+
+    var listaMensajes = '<ul style="text-align: left;">';
     mensajes.forEach(function(mensaje) {
         listaMensajes += '<li>' + mensaje + '</li>';
     });
     listaMensajes += '</ul>';
-    
+
     Swal.fire({
         title: 'Validación de Datos',
         html: listaMensajes,
@@ -31,3 +33,9 @@ document.getElementById("ingresos").addEventListener("submit", function(event) {
         confirmButtonText: 'Ok'
     });
 });
+
+function Limpiar()
+{
+    document.getElementById("proveedor").value = "";
+    document.getElementById("producto").value = "";
+}

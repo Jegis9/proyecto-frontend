@@ -194,7 +194,7 @@
             <div class="modal-content">
                 <!-- Encabezado del Modal -->
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" data-dismiss="modal" onclick="Limpiar()">&times;</button>
                 </div>
 
                 <!-- Contenido del Modal -->
@@ -204,28 +204,28 @@
                         <h2>Agregar producto</h2>
                            <label for="">PROVEEDOR</label>
                             <select name="" id="proveedor">
-                                <option></option>
-                                <option value="">Luis</option>
-                                <option value="">Daniel</option>
-                                <option value="">Mynor</option>
+                                <option value="">Seleccionar proveedor</option>
+                                <option value="Luis">Luis</option>
+                                <option value="Daniel">Daniel</option>
+                                <option value="Mynor">Mynor</option>
 
                             </select>
                             <label for="">PRODUCTO</label>
                             <select name="" id="producto">
-                                <option></option>
-                                <option value="">Piti tanga</option>
-                                <option value="">Calzon</option>
-                                <option value="">Nya</option>
+                                <option value="">Seleccionar producto</option>
+                                <option value="Piti">Piti tanga</option>
+                                <option value="Calzon">Calzon</option>
+                                <option value="Nya">Nya</option>
 
                             </select>
-                            <button type="submit" class="btn btn-success">Agregar ingreso</button>
+                            <button type="submit" class="btn btn-success" >Agregar ingreso</button>
                         </form>
                         </div>
                     
                 </div>
                 <!-- Pie del Modal -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Limpiar()">Cerrar</button>
                 </div>
             </div>
         </div>

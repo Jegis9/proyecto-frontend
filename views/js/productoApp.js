@@ -9,6 +9,7 @@ document.getElementById("crearProducto").addEventListener("submit", function(eve
     var resultado = true;
     const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
 
+
     if (codigo.value.length < 3) {
         mensajes.push('Ingrese un código válido o código muy corto ❌');
         resultado = false;

@@ -15,7 +15,7 @@ document.getElementById("agregarCliente").addEventListener("submit", function(ev
     const regexNit = /^\d{1,}-?\d{1,}$/;
     const regexTelefono = /^(?:\+?502|00502)?[1-9]\d{7}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
+    const regexNombre = /^[a-zA-Z]+$/;
 
     if(regexNombre.test(nombreCliente.value)){
         mensajes.push('Buena estructura del nombre ✔️');
@@ -89,7 +89,8 @@ document.getElementById("eliminarCliente").addEventListener("submit", function(e
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
     var nombreClienteEliminar = document.getElementById("nombreEliminar");
-    const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
+    const regexNombre = /^[a-zA-Z]+$/;
+
 
     if(regexNombre.test(nombreClienteEliminar.value)){
         mensajes.push('Buena estructura del nombre ✔️');
@@ -135,7 +136,8 @@ document.getElementById("actualizarCliente").addEventListener("submit", function
     const regexNit = /^\d{1,}-?\d{1,}$/;
     const regexTelefono = /^(?:\+?502|00502)?[1-9]\d{7}$/;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
+    const regexNombre = /^[a-zA-Z]+$/;
+
 
     if(regexNombre.test(nombreCliente.value)){
         mensajes.push('Buena estructura del nombre ✔️');

@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Electronica</title>
+    <title>La Electronica</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilosGenerales.css">
     <link rel="stylesheet" href="../css/background.css">
@@ -177,158 +183,164 @@
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
-                <div class="modal" id="ModalActualizar">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- Encabezado del Modal -->
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-        
-                            <!-- Contenido del Modal -->
-                            <div class="modal-body">
-                                <div class=" formulario">
-                                    <form action="">
-                                    <h2>Actualizar personal</h2>
-                                        <label for="">NOMBRE</label>
-                                        <input type="text">
-                                        <label for="">APELLIDO</label>
-                                        <input type="text">
-                                        <label for="">GENERO</label>
-                                        <input type="text">
-                                        <label for="">PUESTO</label>
-                                        <input type="text">
-                                        <label for="">USUARIO</label>
-                                        <input type="text">
-                                        <label for="">CONTRASEÑA</label>
-                                        <input type="text">
-                                        <label for="">DIRECCION</label>
-                                        <input type="text">
-                                        <label for="">TELEFONO</label>
-                                        <input type="text">
-                                        <label for="">EMAIL</label>
-                                        <input type="text">
-                                        <label for="">SUELDO</label>
-                                        <input type="text">
-                                        <label for="">ROL</label>
-                                        <select name="" id="">
-                                            <option value="">Gerente</option>
-                                            <option value="">Contador</option>
-                                            <option value="">Secretaria</option>
-        
-                                        </select>
-                                        <button type="button " class="btn btn-success">Agregar personal</button>
-                                    </form>
-                                    </div>
-                                
-                            </div>
-        
-                            <!-- Pie del Modal -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <form method="post" id="actualizarPersonal">
+                    <div class="modal" id="ModalActualizar">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Encabezado del Modal -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" onclick="LimpiarActualizar()">&times;</button>
+                                </div>
+            
+                                <!-- Contenido del Modal -->
+                                <div class="modal-body">
+                                    <div class=" formulario">
+                                        <h2>Actualizar personal</h2>
+                                            <label for="">NOMBRE</label>
+                                            <input type="text" id="nombreActualizar">
+                                            <label for="">APELLIDO</label>
+                                            <input type="text" id="apellidoActualizar">
+                                            <label for="">GENERO</label>
+                                            <input type="text" id="generoActualizar">
+                                            <label for="">PUESTO</label>
+                                            <input type="text" id="puestoActualizar">
+                                            <label for="">USUARIO</label>
+                                            <input type="text" id="usuarioActualizar">
+                                            <label for="">CONTRASEÑA</label>
+                                            <input type="text" id="contraseñaActualizar">
+                                            <label for="">DIRECCION</label>
+                                            <input type="text" id="direccionActualizar">
+                                            <label for="">TELEFONO</label>
+                                            <input type="text" id="telefonoActualizar">
+                                            <label for="">EMAIL</label>
+                                            <input type="text" id="emailActualizar">
+                                            <label for="">SUELDO</label>
+                                            <input type="text" id="sueldoActualizar">
+                                            <label for="">ROL</label>
+                                            <select name="" id="rolActualizar">
+                                                <option value="">Selecciona un rol</option>
+                                                <option value="gerente">Gerente</option>
+                                                <option value="contador">Contador</option>
+                                                <option value="secretaria">Secretaria</option>
+            
+                                            </select>
+                                            <button type="submit " class="btn btn-success">Agregar personal</button>
+                                        </div>
+                                    
+                                </div>
+            
+                                <!-- Pie del Modal -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarActualizar()">Cerrar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
 
         <!--ELIMINAR PRODUCTO-->
                 <!-- Modal -->
-                <div class="modal" id="ModalEliminar">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- Encabezado del Modal -->
-                            <div class="modal-header">
-                                <img width="48" height="48" src="https://img.icons8.com/fluency/48/general-warning-sign.png" alt="general-warning-sign"/>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-        
-                            <!-- Contenido del Modal -->
-                            <div class="modal-body">
-                                <div class=" formulario">
-                                    <form action="">
-                                    <h2>Eliminar Personal</h2>
-                                        <label for="">ID</label>
-                                        <input type="text" readonly>
-                                
-                                        <label for="">NOMBRE</label>
-                                        <input type="text">
-
-                                    </form>
-                                    </div>
-                                
-                            </div>
-        
-                            <!-- Pie del Modal -->
-                            <div class="modal-footer">
-                                <button type="button " class="btn btn-success">Si</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <form method="post" id="eliminarPersonal">
+                    <div class="modal" id="ModalEliminar">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Encabezado del Modal -->
+                                <div class="modal-header">
+                                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/general-warning-sign.png" alt="general-warning-sign"/>
+                                    <button type="button" class="close" data-dismiss="modal" onclick="LimpiarEliminar()">&times;</button>
+                                </div>
+            
+                                <!-- Contenido del Modal -->
+                                <div class="modal-body">
+                                    <div class=" formulario">
+                                        <form action="">
+                                        <h2>Eliminar Personal</h2>
+                                            <label for="">ID</label>
+                                            <input type="text" readonly>
+                                    
+                                            <label for="">NOMBRE</label>
+                                            <input type="text" id="nombreEliminar">
+    
+                                        </form>
+                                        </div>
+                                    
+                                </div>
+            
+                                <!-- Pie del Modal -->
+                                <div class="modal-footer">
+                                    <button type="submit " class="btn btn-success">Si</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarEliminar()">No</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             <!--AGREGAR -->
                     <!-- Modal -->
-        <div class="modal" id="agregarPersonal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Encabezado del Modal -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Contenido del Modal -->
-                    <div class="modal-body">
-                        <div class=" formulario">
-                            <form action="">
-                            <h2>Agregar personal</h2>
-                                <label for="">NOMBRE</label>
-                                <input type="text">
-                                <label for="">APELLIDO</label>
-                                <input type="text">
-                                <label for="">GENERO</label>
-                                <select name="" id="">
-                                    <option value="masculino">Masculino</option>
-                                    <option value="femenino">Femenino</option>
-                                </select>
-                                <label for="">PUESTO</label>
-                                <input type="text">
-                                <label for="">USUARIO</label>
-                                <input type="text">
-                                <label for="">CONTRASEÑA</label>
-                                <input type="text">
-                                <label for="">DIRECCION</label>
-                                <input type="text">
-                                <label for="">TELEFONO</label>
-                                <input type="text">
-                                <label for="">EMAIL</label>
-                                <input type="text">
-                                <label for="">SUELDO</label>
-                                <input type="text">
-                                <label for="">ROL</label>
-                                <select name="" id="">
-                                    <option value="">Gerente</option>
-                                    <option value="">Contador</option>
-                                    <option value="">Secretaria</option>
-
-                                </select>
-                                <button type="button " class="btn btn-success">Agregar personal</button>
-                            </form>
+                <form method="post" id="crearPersonal">
+                    <div class="modal" id="agregarPersonal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Encabezado del Modal -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" onclick="LimpiarCrear()">&times;</button>
+                                </div>
+            
+                                <!-- Contenido del Modal -->
+                                <div class="modal-body">
+                                    <div class=" formulario">
+                                        <h2>Agregar personal</h2>
+                                            <label for="">NOMBRE</label>
+                                            <input type="text" id="nombreAgregar">
+                                            <label for="">APELLIDO</label>
+                                            <input type="text" id="apellidoAgregar">
+                                            <label for="">GENERO</label>
+                                            <select name="" id="generoAgregar">
+                                                <option value="">Seleccione un genero</option>
+                                                <option value="masculino">Masculino</option>
+                                                <option value="femenino">Femenino</option>
+                                            </select>
+                                            <label for="">PUESTO</label>
+                                            <input type="text" id="puestoAgregar">
+                                            <label for="">USUARIO</label>
+                                            <input type="text" id="usuarioAgregar">
+                                            <label for="">CONTRASEÑA</label>
+                                            <input type="text" id="contraseñaAgregar">
+                                            <label for="">DIRECCION</label>
+                                            <input type="text" id="direccionAgregar">
+                                            <label for="">TELEFONO</label>
+                                            <input type="text" id="telefonoAgregar">
+                                            <label for="">EMAIL</label>
+                                            <input type="text" id="emailAgregar">
+                                            <label for="">SUELDO</label>
+                                            <input type="text" id="sueldoAgregar">
+                                            <label for="">ROL</label>
+                                            <select name="" id="rolAgregar">
+                                                <option value="">Seleccione un rol</option>
+                                                <option value="Gerente">Gerente</option>
+                                                <option value="Contador">Contador</option>
+                                                <option value="Secretaria">Secretaria</option>
+            
+                                            </select>
+                                            <button type="submit" class="btn btn-success">Agregar personal</button>
+                                        </div>
+                                    
+                                </div>
+            
+                                <!-- Pie del Modal -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarCrear()">Cerrar</button>
+                                </div>
                             </div>
-                        
+                        </div>
                     </div>
-
-                    <!-- Pie del Modal -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </form>
     </div>
 
     <!-- Agrega los scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/personalApp.js"></script>
 </body>
 </html>

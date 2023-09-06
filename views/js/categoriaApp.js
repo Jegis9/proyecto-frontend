@@ -3,7 +3,8 @@ document.getElementById("crearCategoria").addEventListener("submit", function(ev
     var categoria = document.getElementById("nombreCategoria");
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
-    const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
+    const regexNombre = /^[a-zA-Z]+$/;
+
 
     
     if(regexNombre.test(categoria.value)){
@@ -37,7 +38,8 @@ document.getElementById("eliminarCategoria").addEventListener("submit", function
     var categoriaEliminar = document.getElementById("nombreCategoriaEliminar");
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
-    const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
+    const regexNombre = /^[a-zA-Z]+$/;
+
 
     
     if(regexNombre.test(categoriaEliminar.value)){
@@ -72,7 +74,8 @@ document.getElementById("actualizarCategoria").addEventListener("submit", functi
     var mensajes = []; // Usamos un array para almacenar los mensajes
     var resultado = true;
     const regexId = /^\d+$/;
-    const regexNombre = /^[A-Za-z0-9\s\-,.&()']+$/;
+    const regexNombre = /^[a-zA-Z]+$/;
+
 
     if(regexId.test(idActualizar.value)){
         mensajes.push('Buena estructura del ID ✔️');

@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Electronica</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/estilosGenerales.css">
     <link rel="stylesheet" href="../css/background.css">
@@ -162,51 +167,52 @@
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
+               <form method="post" id="actualizarProveedor">
                 <div class="modal" id="ModalActualizar">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <!-- Encabezado del Modal -->
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal" onclick="LimpiarActualizar()">&times;</button>
                             </div>
         
                             <!-- Contenido del Modal -->
                             <div class="modal-body">
                                 <div class=" formulario">
-                                    <form action="">
                                     <h2>Actualizar Proveedor</h2>
                                         <label for="">ID</label>
                                         <input type="text">
                                         <label for="">RAZON SOCIAL</label>
-                                        <input type="text">
+                                        <input type="text" id="razonActualizar">
                                         <label for="">DIRECCION</label>
-                                        <input type="text">
+                                        <input type="text" id="direccionActualizar">
                                         <label for="">TELEFONO</label>
-                                        <input type="text">
+                                        <input type="text" id="telefonoActualizar">
                  
-                                        <button type="button " class="btn btn-success">Agregar Proveedor</button>
-                                    </form>
+                                        <button type="submit" class="btn btn-success">Agregar Proveedor</button>
                                     </div>
                                 
                             </div>
         
                             <!-- Pie del Modal -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarActualizar()">Cerrar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
+               </form>
         <!--ELIMINAR PRODUCTO-->
                 <!-- Modal -->
+            <form method="post" id="eliminarProveedor">
                 <div class="modal" id="ModalEliminar">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <!-- Encabezado del Modal -->
                             <div class="modal-header">
                                 <img width="48" height="48" src="https://img.icons8.com/fluency/48/general-warning-sign.png" alt="general-warning-sign"/>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <button type="button" class="close" data-dismiss="modal" onclick="LimpiarEliminar()">&times;</button>
                             </div>
         
                             <!-- Contenido del Modal -->
@@ -218,7 +224,7 @@
                                         <input type="text" readonly>
                                 
                                         <label for="">RAZON SOCIAL</label>
-                                        <input type="text">
+                                        <input type="text" id="razonEliminar">
 
                                     </form>
                                     </div>
@@ -227,53 +233,57 @@
         
                             <!-- Pie del Modal -->
                             <div class="modal-footer">
-                                <button type="button " class="btn btn-success">Si</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button type="submit " class="btn btn-success">Si</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarEliminar()">No</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </form>
             <!--AGREGAR -->
                     <!-- Modal -->
-        <div class="modal" id="miModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Encabezado del Modal -->
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Contenido del Modal -->
-                    <div class="modal-body">
-                        <div class=" formulario">
-                            <form action="">
-                            <h2>Agregar Proveedor</h2>
-                                <label for="">RAZON SOCIAL</label>
-                                <input type="text">
-                                <label for="">DIRECCION</label>
-                                <input type="text">
-                                <label for="">TELEFONO</label>
-                                <input type="text">
-                               
-            
-                                <button type="button " class="btn btn-success">Agregar Proveedor</button>
-                            </form>
-                            </div>
-                        
-                    </div>
-
-                    <!-- Pie del Modal -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <form method="post" id="agregarProveedor">
+            <div class="modal" id="miModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Encabezado del Modal -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" onclick="LimpiarAgregar()">&times;</button>
+                        </div>
+    
+                        <!-- Contenido del Modal -->
+                        <div class="modal-body">
+                            <div class=" formulario">
+                                <form action="">
+                                <h2>Agregar Proveedor</h2>
+                                    <label for="">RAZON SOCIAL</label>
+                                    <input type="text" id="razonAgregar">
+                                    <label for="">DIRECCION</label>
+                                    <input type="text" id="direccionAgregar">
+                                    <label for="">TELEFONO</label>
+                                    <input type="text" id="telefonoAgregar">
+                                   
+                
+                                    <button type="button " class="btn btn-success">Agregar Proveedor</button>
+                                </form>
+                                </div>
+                            
+                        </div>
+    
+                        <!-- Pie del Modal -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="LimpiarAgregar()">Cerrar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <!-- Agrega los scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../js/proveedoresApp.js"></script>
 </body>
 </html>

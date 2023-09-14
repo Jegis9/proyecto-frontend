@@ -69,6 +69,13 @@ input[type="text"]:focus,input[type="file"]:focus {
     width: 100%;
     margin: 0;
 }
+.cem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .input-group.mb-3.a .input-group-text.a {
     width: auto; 
@@ -78,3 +85,5 @@ input[type="text"]:focus,input[type="file"]:focus {
 .input-group-text.a input.form-control.a {
     width: 100px;
 }
+
+/*ARCHIVOS EXTRAS*/

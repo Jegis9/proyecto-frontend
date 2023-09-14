@@ -126,75 +126,95 @@
 
 
 <div class="container">
-    <div class="container sticky-section">
-    <h1>Ingresos</h1>
-    <div class="container">
-        <div class="input-group mb-3">
-            <h2>Buscar:</h2>
-            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="container sticky-section cem">
+    <h1>Nuevo</h1>
+
+    <div class="d-flex flex-row align-items-center ">
+        <div class="form-group mr-2">
+            <label for="proveedoresSelect">Proveedor</label>
+            <select id="proveedoresSelect" class="custom-select custom-select-lg" style="width: 250px;">
+                <option value="a">a</option>
+                <option value="b">b</option>
+                <option value="c">c</option>
+                <option value="d">d</option>
+                <option value="e">e</option>
+                <option value="f">f</option>
+                <option value="g">g</option>
+                <option value="h">h</option>
+            </select>
         </div>
-    </div>
-    <div class="container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-success botonModal">
-            <a href="ventas.html" style="color:aliceblue">Ingreso</a>
+        <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
+            Agregar producto
         </button>
-        </div>
-
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            
-            <h2>Historial de ventas</h2>
-            <div class="table-container">
-                <!-- Contenido de la primera tabla -->
-                <table class="table table-hover table-bordered">
-                    <th>INGRESO ID</th>
-                    <th>FECHA</th>
-                    <th>TRABAJADOR ID</th>
-                    <th>PROVEEDOR ID</th>
 
-        
-                    <tr>
-                        <td>1</td>
-                        <td>50</td>
-                        <td>Q 5.00</td>
-                        <td>Q 10.00</td>
-                 
-                    </tr>
-
-              </table>
-      </div>
-        </div>
-        <div class="col-md-6">
-            <h2>Detalles ventas</h2>
-            <div class="table-container">
-                <table class="table table-hover table-bordered">
-                    <th>ID</th>
-                    <th>INGRESO ID</th>
-                    <th>PRODUCTO ID</th>
-                    <th>CANTIDAD</th>
-                    <th>PRECIO COMPRA</th>
-                    <th>STOCK ID</th>
-
-        
-                    <tr>
-                        <td>1</td>
-                        <td>50</td>
-                        <td>415</td>
-                        <td>10</td>
-                        <td>4545</td>
-                        <td>01</td>
-             
-                    </tr>
-
-            </table>
-            
-            </div>
+</div>
+<br>
+    </div>
+    <div class="container">
+        <!--AQUI AGREGUE EL DIV PARA EL CONTENIDO DE LA TABLA-->
+        <div class="table-container">
+        <table class="table table-hover table-bordered">
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+            <th>CANTIDAD</th>
+            <th>PRECIO COMPRA</th>
+            <th>PRECIO MINIMO VENTA</th>
+            <th>PRECIO VENTA</th>
+            <th>    <!-- Botón para abrir el modal -->
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalEliminar">
+                    Finalizar
+                </button></th>
+            <tr>
+            <td>1</td>
+            <td>Daniel</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+           
+           
+            </tr>
+        </table>
         </div>
     </div>
 </div>
 
+<form method="post" id="ingresos">
+      <!-- Modal -->
+      <div class="modal" id="miModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Encabezado del Modal -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="Limpiar()">&times;</button>
+                </div>
+
+                <!-- Contenido del Modal -->
+                <div class="modal-body">
+                    <div class=" formulario">
+                        <form action="">
+                            <label for="">PRODUCTO</label>
+                            <select name="" id="producto">
+                                <option value="">Seleccionar producto</option>
+                                <option value="Piti">Piti tanga</option>
+                                <option value="Calzon">Calzon</option>
+                                <option value="Nya">Nya</option>
+
+                            </select>
+                            <button type="submit" class="btn btn-success" >Enviar</button>
+                        </form>
+                        </div>
+                    
+                </div>
+                <!-- Pie del Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="Limpiar()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 <!-- Agrega los scripts de Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>

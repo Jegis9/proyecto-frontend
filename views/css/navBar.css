@@ -4,6 +4,51 @@
 .fa-2x {
 font-size: 2em;
 }
+/*si los datos son muchos poner barrita para bajar*/
+.content-container {
+  overflow: auto; 
+  height: calc(100vh - 60px); 
+  padding: 15px;
+}
+.sticky-section {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+.table-container {
+  overflow: auto;
+  max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+}
+
+th {
+  background-color: #f2f2f2; /* Fondo gris para los encabezados */
+  position: sticky;
+  top: 0;
+}
+
+
+
+.main-menu {
+  background: #212121;
+  border-right: 1px solid #e5e5e5;
+  position: fixed; 
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  width: 60px;
+  z-index: 1000;
+  overflow: auto; 
+}
+
 .fa {
 position: relative;
 display: table-cell;
@@ -21,7 +66,6 @@ overflow:visible;
 }
 
 .main-menu {
-background:#212121;
 border-right:1px solid #e5e5e5;
 position:absolute;
 top:0;

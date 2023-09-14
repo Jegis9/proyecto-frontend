@@ -118,7 +118,10 @@
             </ul>
         </nav>
         <!--FIN DE NAVBAR-->
+    <div class="content-container">
+
     <div class="container mt-5">
+        <div class="container sticky-section">
         <h1>Categorias</h1>
         <div class="container">
             <div class="input-group mb-3">
@@ -126,16 +129,18 @@
                 <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
+        
         <div class="container">
         <!-- Botón para abrir el modal -->
         <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
             Nuevo categoria
         </button>
         </div>
-
+    </div>
 
 
         <div class="container">
+            <div class="table-container">
             <h2>Lista de categorias</h2>
             <table class="table table-hover table-bordered">
                 <th>ID</th>
@@ -159,6 +164,7 @@
                     </td>
                 </tr>
             </table>
+        </div>
         </div>
         <!--ACTUALIZAR Categoria-->
                 <!-- Modal -->
@@ -268,11 +274,13 @@
             </div>
         </form>
     </div>
+    </div>
 
     <!-- Agrega los scripts de Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/categoriaApp.js"></script>
+    <script src="../js/table"></script>
 </body>
 </html>

@@ -118,7 +118,9 @@
             </ul>
         </nav>
         <!--FIN DE NAVBAR-->
+
     <div class="container mt-5">
+        <div class="container sticky-section">
         <h1>Productos</h1>
         <div class="container">
             <div class="input-group mb-3">
@@ -131,12 +133,14 @@
         <button type="button" class="btn btn-success botonModal" data-toggle="modal" data-target="#miModal">
             Agregar Producto
         </button>
+        <h2>Lista de productos</h2>
         </div>
+    </div>
 
 
 
         <div class="container">
-            <h2>Lista de productos</h2>
+            <div class="table-container">
             <table class="table table-hover table-bordered">
                 <th>ID</th>
                 <th>CODIGO</th>
@@ -165,6 +169,7 @@
                     </td>
                 </tr>
             </table>
+            </div>
         </div>
         <!--ACTUALIZAR PRODUCTO-->
                 <!-- Modal -->
@@ -289,5 +294,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/productoApp.js"></script>
+    <script src="../js/table"></script>
 </body>
 </html>

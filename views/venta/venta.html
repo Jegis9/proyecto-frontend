@@ -120,14 +120,16 @@
     <h1>Ventas</h1>
     <div class="container">
         <div class="input-group mb-3">
-            <h2>Buscar:</h2>
-            <input type="text" class="form-control w-25" placeholder="Nombre o Codigo" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
+            <input type="text" class="form-control" placeholder="Busca aqui" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary " type="button" style="height: 45px;"><img src="../img/icons8-búsqueda.gif" style="height: 20px;" alt=""></button>
+            </div>
+          </div>>
     </div>
     </div>
     <div class="table-container">
     <table class="table table-hover table-bordered">
-            <th>ID</th>
+            
             <th>NOMBRE</th>
             <th>PRECIO VENTA</th>
             <th>CATEGORIA</th>
@@ -135,11 +137,11 @@
             <th>Opcion</th>
 
             <tr>
-                <td>1</td>
+
                 <td>Papel</td>
                 <td>Q 5.00</td>
                 <td>Limpieza</td>
-                <td>54</td>
+                <td><input type="number" min="1" pattern="^[0-9]+"></td>
                 <td>
                     <button type="button" class="btn btn-primary">Agregar</button>
                 </td>
@@ -157,7 +159,7 @@
 
     <div class="table-container">   
     <table class="table table-hover table-bordered">
-        <th>ID</th>
+        
         <th>NOMBRE</th>
         <th>PRECIO VENTA</th>
         <th>CATEGORIA</th>
@@ -165,11 +167,11 @@
         <th>Opcion</th>
 
         <tr>
-            <td>1</td>
+
             <td>Papel</td>
             <td>Q 5.00</td>
             <td>Limpieza</td>
-            <td>54</td>
+            <td>545</td>
             <td>
                 <button type="button" class="btn btn-danger">Eliminar</button>
             </td>
